@@ -116,7 +116,7 @@ export default function Projects() {
         animate={isInView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 0.5, delay: index * 0.1 }}
       >
-        <Card className="h-full bg-white/70 backdrop-blur-sm border-2 border-pink-100 hover:border-pink-300 transition-all hover:shadow-2xl">
+        <Card className="h-full bg-card/70 backdrop-blur-sm border-2 border-border hover:border-pink-300 transition-all hover:shadow-2xl">
           <CardHeader>
             <div className="flex items-start justify-between mb-2">
               <div className={`bg-gradient-to-br ${colorGradient} p-3 rounded-xl shadow-lg`}>
@@ -139,7 +139,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-gray-700 transition-colors"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
                     title="View Code"
                   >
                     <Github size={20} />
@@ -147,15 +147,15 @@ export default function Projects() {
                 )}
               </div>
             </div>
-            <CardTitle className="text-xl font-bold text-gray-800">
+            <CardTitle className="text-xl font-bold text-foreground">
               {project.title}
             </CardTitle>
-            <CardDescription className="font-handwritten text-lg text-gray-600">
+            <CardDescription className="font-handwritten text-lg text-muted-foreground">
               {project.subtitle}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-700 mb-4 leading-relaxed">
+            <p className="text-muted-foreground mb-4 leading-relaxed">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-3">
@@ -163,7 +163,7 @@ export default function Projects() {
                 <Badge
                   key={tech}
                   variant="secondary"
-                  className="bg-gradient-to-r from-pink-100 to-purple-100 text-gray-700 border border-pink-200"
+                  className="bg-secondary text-secondary-foreground border border-border"
                 >
                   {tech}
                 </Badge>
@@ -186,14 +186,14 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-all"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-secondary/80 transition-all"
                 >
                   <Github size={16} />
                   View Code
                 </a>
               )}
             </div>
-            <p className="text-sm text-gray-500 italic">{project.date}</p>
+            <p className="text-sm text-muted-foreground italic">{project.date}</p>
           </CardContent>
         </Card>
       </motion.div>
@@ -212,12 +212,12 @@ export default function Projects() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <Flower2 className="text-pink-400" size={32} />
-            <h2 className="text-5xl md:text-6xl font-handwritten text-gray-800 text-center">
+            <h2 className="text-5xl md:text-6xl font-handwritten text-foreground text-center">
               Project Garden
             </h2>
             <Flower2 className="text-purple-400" size={32} />
           </div>
-          <p className="text-center text-gray-600 font-handwritten text-xl mb-12">
+          <p className="text-center text-muted-foreground font-handwritten text-xl mb-12">
             Watch my projects bloom
           </p>
 

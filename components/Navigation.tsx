@@ -2,11 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Download, Menu, X } from 'lucide-react';
+import { Download, Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,6 +44,10 @@ export default function Navigation() {
     link.click();
   };
 
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -49,14 +55,14 @@ export default function Navigation() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 backdrop-blur-md shadow-lg'
+          ? 'bg-background/90 backdrop-blur-md shadow-lg border-b'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <motion.div
-            className="flex-shrink-0 font-handwritten text-2xl text-gray-800"
+            className="flex-shrink-0 font-handwritten text-2xl text-foreground"
             whileHover={{ scale: 1.05 }}
           >
             Ashmi 
@@ -69,7 +75,7 @@ export default function Navigation() {
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-700 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-muted-foreground hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </button>
@@ -83,6 +89,14 @@ export default function Navigation() {
                 <Download size={16} />
                 Resume
               </motion.button>
+              <motion.button
+                onClick={toggleTheme}
+                className="ml-2 flex items-center gap-2 bg-secondary text-secondary-foreground px-3 py-2 rounded-full text-sm font-medium hover:bg-secondary/80 transition-all duration-200"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+              </motion.button>
             </div>
           </div>
 
@@ -90,7 +104,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-700 hover:text-pink-500 p-2"
+              className="text-muted-foreground hover:text-pink-500 p-2"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -104,14 +118,14 @@ export default function Navigation() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-white/95 backdrop-blur-md border-t"
+          className="md:hidden bg-background/95 backdrop-blur-md border-t"
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+                className="text-muted-foreground hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
               >
                 {item.name}
               </button>
@@ -122,6 +136,13 @@ export default function Navigation() {
             >
               <Download size={16} />
               Download Resume
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="flex items-center gap-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-full text-base font-medium w-full justify-center mt-2 hover:bg-secondary/80"
+            >
+              {theme === 'light' ? <Moon size={16} /> : <Sun size={16} />}
+              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
             </button>
           </div>
         </motion.div>

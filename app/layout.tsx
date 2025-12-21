@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Indie_Flower, Poppins } from 'next/font/google';
+import { ThemeProvider } from '../components/ThemeProvider';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const indieFlower = Indie_Flower({
@@ -64,7 +65,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${indieFlower.variable} ${poppins.variable} font-poppins`}>
-        {children}
+        <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

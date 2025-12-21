@@ -15,7 +15,7 @@ import Navigation from '@/components/Navigation';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-blue-50 via-pink-50 to-purple-50 overflow-hidden">
+    <main className="relative min-h-screen bg-background overflow-hidden">
       <Navigation />
       <Butterfly index={0} />
       <Butterfly index={1} />
