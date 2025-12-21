@@ -37,9 +37,9 @@ export default function Navigation() {
   };
 
   const downloadResume = () => {
-    // Placeholder for resume download
+    // Download resume PDF
     const link = document.createElement('a');
-    link.href = '/resume.pdf'; // Assuming resume.pdf is in public folder
+    link.href = '/ashmisnresume (2).pdf'; // Resume file in public folder
     link.download = 'Ashmi_SN_Resume.pdf';
     link.click();
   };
