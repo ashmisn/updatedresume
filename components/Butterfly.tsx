@@ -34,7 +34,7 @@ export default function Butterfly({ index }: ButterflyProps) {
 
   return (
     <motion.div
-      className="hidden sm:block fixed pointer-events-none z-20"
+      className="fixed pointer-events-none z-20"
       animate={
         path.length > 0
           ? {
