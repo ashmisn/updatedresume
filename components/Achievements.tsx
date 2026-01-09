@@ -51,7 +51,7 @@ export default function Achievements() {
   ];
 
   return (
-    <section id="achievements" ref={ref} className="relative py-16 sm:py-20 md:py-24 px-4">
+    <section id="achievements" ref={ref} className="relative py-12 sm:py-16 md:py-24 px-3 sm:px-4">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent"></div>
 
       <div className="max-w-6xl mx-auto">
@@ -60,57 +60,57 @@ export default function Achievements() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center justify-center gap-3 mb-12">
-            <Flower2 className="text-pink-400" size={32} />
-            <h2 className="text-5xl md:text-6xl font-handwritten text-gray-800 text-center">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 flex-wrap">
+            <Flower2 className="text-pink-400 hidden sm:block" size={32} />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-handwritten text-gray-800 text-center">
               Achievements & Activities
             </h2>
-            <Flower2 className="text-purple-400" size={32} />
+            <Flower2 className="text-purple-400 hidden sm:block" size={32} />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-4 md:p-6 border-2 border-pink-100 hover:shadow-2xl transition-shadow"
+                className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl p-3 sm:p-4 md:p-6 border-2 border-pink-100 hover:shadow-2xl transition-shadow"
               >
-                <div className="bg-gradient-to-br from-yellow-400 to-orange-400 p-4 rounded-2xl shadow-lg inline-flex mb-4">
-                  <achievement.icon className="text-white" size={28} />
+                <div className="bg-gradient-to-br from-yellow-400 to-orange-400 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg inline-flex mb-3 sm:mb-4">
+                  <achievement.icon className="text-white" size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">
                   {achievement.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                   {achievement.description}
                 </p>
               </motion.div>
             ))}
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {extracurricular.map((activity, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-8 border-2 border-purple-100"
+                className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl p-4 sm:p-6 md:p-8 border-2 border-purple-100"
               >
-                <div className="flex items-start gap-6">
-                  <div className="bg-gradient-to-br from-purple-400 to-pink-400 p-4 rounded-2xl shadow-lg flex-shrink-0">
-                    <Users className="text-white" size={28} />
+                <div className="flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6">
+                  <div className="bg-gradient-to-br from-purple-400 to-pink-400 p-3 sm:p-4 rounded-xl sm:rounded-2xl shadow-lg flex-shrink-0">
+                    <Users className="text-white" size={24} />
                   </div>
 
-                  <div className="flex-1">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-800 mb-1">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 sm:mb-4 gap-2">
+                      <div className="min-w-0">
+                        <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-1">
                           {activity.role}
                         </h3>
-                        <p className="text-lg text-gray-600 font-medium">
+                        <p className="text-sm sm:text-lg text-gray-600 font-medium break-words">
                           {activity.organization} • {activity.institution}
                         </p>
                       </div>
@@ -118,8 +118,8 @@ export default function Achievements() {
 
                     <ul className="space-y-2 text-gray-700">
                       {activity.activities.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
-                          <span className="text-pink-400 text-xl flex-shrink-0">🌸</span>
+                        <li key={i} className="flex items-start gap-2 sm:gap-3 text-sm sm:text-base">
+                          <span className="text-pink-400 text-lg sm:text-xl flex-shrink-0">🌸</span>
                           <span>{item}</span>
                         </li>
                       ))}

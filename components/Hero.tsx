@@ -19,23 +19,23 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-6 py-12 sm:py-16 md:py-20 cherry-blossom-bg"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24 cherry-blossom-bg"
     >
-      <Flower2 className="absolute top-10 left-10 text-pink-300 opacity-20" size={80} />
-      <Flower2 className="absolute bottom-20 right-10 text-purple-300 opacity-20" size={100} />
+      <Flower2 className="absolute top-8 sm:top-10 left-4 sm:left-10 text-pink-300 opacity-20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-32 lg:h-32" />
+      <Flower2 className="absolute bottom-16 sm:bottom-20 right-4 sm:right-10 text-purple-300 opacity-20 w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40" />
 
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-center">
 
         {/* IMAGE — BIG + ZOOM */}
         <motion.div
-          whileHover={{ scale: 1.15 }}
+          whileHover={{ scale: 1.08 }}
           transition={{ type: 'spring', stiffness: 120, damping: 12 }}
-          className="mx-auto md:mx-0"
+          className="mx-auto md:mx-0 order-2 md:order-1"
         >
-          <div className="w-48 h-48 sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px] 
-                          rounded-3xl overflow-hidden 
+          <div className="w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[420px] lg:h-[420px]
+                          rounded-2xl sm:rounded-3xl overflow-hidden 
                           shadow-[0_30px_80px_rgba(0,0,0,0.25)]
-                          border-8 border-white">
+                          border-4 sm:border-8 border-white">
             <img
               src="/profile.jpg"
               alt="Ashmi S N"
@@ -45,10 +45,10 @@ export default function Hero() {
         </motion.div>
 
         {/* CONTENT */}
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-left order-1 md:order-2">
 
           <motion.h1
-            className="text-4xl sm:text-6xl md:text-7xl font-handwritten text-foreground mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-handwritten text-foreground mb-4 sm:mb-6 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -56,7 +56,7 @@ export default function Hero() {
           </motion.h1>
 
           {/* BLOOMING ROLE */}
-          <div className="h-16 mb-8 overflow-hidden">
+          <div className="h-12 sm:h-16 mb-6 sm:mb-8 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={roles[index]}
@@ -64,20 +64,20 @@ export default function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.4 }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
-                className="text-2xl md:text-4xl font-light text-muted-foreground"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light text-muted-foreground"
               >
                 {roles[index]}
               </motion.div>
             </AnimatePresence>
           </div>
 
-          <div className="space-y-3 text-lg sm:text-xl text-muted-foreground mb-10 font-handwritten">
+          <div className="space-y-2 sm:space-y-3 text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 sm:mb-10 font-handwritten">
             <p>I build beautiful interfaces 🌼</p>
             <p>I engineer scalable backends 🌿</p>
             <p>I train intelligent AI systems 🤖</p>
           </div>
 
-          <div className="flex flex-wrap gap-4 items-center text-muted-foreground mb-8 justify-center md:justify-start">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 md:gap-6 items-center text-sm sm:text-base md:text-lg text-muted-foreground mb-8 sm:mb-10 justify-center md:justify-start">
             <div className="flex items-center gap-2">
               <MapPin size={18} /> Trivandrum
             </div>
@@ -85,7 +85,7 @@ export default function Hero() {
               <Mail size={18} />
               <a
                 href="mailto:ashmi.sn2004@gmail.com"
-                className="hover:text-pink-500"
+                className="hover:text-pink-500 break-all"
               >
                 ashmi.sn2004@gmail.com
               </a>
@@ -95,18 +95,18 @@ export default function Hero() {
             </div> */}
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
             <a
               href="https://github.com/ashmisn"
               target="_blank"
-              className="px-4 py-2 sm:px-6 sm:py-3 bg-background rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2 border"
+              className="px-4 sm:px-6 py-2 sm:py-3 bg-background rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2 border text-sm sm:text-base"
             >
               <Github size={20} /> GitHub
             </a>
             <a
               href="https://www.linkedin.com/in/ashmi-s-n-67581a315/"
               target="_blank"
-              className="px-4 py-2 sm:px-6 sm:py-3 bg-background rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2 border"
+              className="px-4 sm:px-6 py-2 sm:py-3 bg-background rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-2 border text-sm sm:text-base"
             >
               <Linkedin size={20} /> LinkedIn
             </a>
