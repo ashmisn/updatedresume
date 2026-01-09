@@ -68,6 +68,16 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 @layer utilities {

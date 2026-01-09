@@ -201,23 +201,23 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" ref={ref} className="relative py-24 px-4">
+    <section id="projects" ref={ref} className="relative py-16 sm:py-20 md:py-24 px-4">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent"></div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <Flower2 className="text-pink-400" size={32} />
             <h2 className="text-5xl md:text-6xl font-handwritten text-foreground text-center">
               Project Garden
             </h2>
             <Flower2 className="text-purple-400" size={32} />
           </div>
-          <p className="text-center text-muted-foreground font-handwritten text-xl mb-12">
+          <p className="text-center text-muted-foreground font-handwritten text-lg sm:text-xl mb-12">
             Watch my projects bloom
           </p>
 

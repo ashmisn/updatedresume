@@ -67,7 +67,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" ref={ref} className="relative py-24 px-4">
+    <section id="skills" ref={ref} className="relative py-16 sm:py-20 md:py-24 px-4">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
 
       <div className="max-w-6xl mx-auto">
@@ -84,14 +84,14 @@ export default function Skills() {
             <Flower2 className="text-pink-400" size={32} />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-6 border-2 border-gray-100 hover:shadow-2xl transition-shadow"
+                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-4 md:p-6 border-2 border-gray-100 hover:shadow-2xl transition-shadow"
               >
                 <div className={`bg-gradient-to-br ${category.color} p-4 rounded-2xl shadow-lg inline-flex mb-4`}>
                   <category.icon className="text-white" size={28} />

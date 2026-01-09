@@ -5,7 +5,7 @@ import { Flower2, Heart } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="relative py-16 px-4">
+    <footer className="relative py-12 sm:py-16 px-4">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent"></div>
 
       <div className="max-w-4xl mx-auto text-center">

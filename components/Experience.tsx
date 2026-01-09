@@ -10,7 +10,7 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="experience" ref={ref} className="relative py-24 px-4">
+    <section id="experience" ref={ref} className="relative py-16 sm:py-20 md:py-24 px-4">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
 
       <div className="max-w-5xl mx-auto">
@@ -27,8 +27,8 @@ export default function Experience() {
             <Flower2 className="text-pink-400" size={32} />
           </div>
 
-          <div className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 border-2 border-purple-100">
-            <div className="flex items-start gap-6">
+          <div className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-8 lg:p-12 border-2 border-purple-100">
+            <div className="flex flex-col md:flex-row items-start gap-6">
               <div className="bg-gradient-to-br from-purple-400 to-pink-400 p-4 rounded-2xl shadow-lg flex-shrink-0">
                 <Briefcase className="text-white" size={32} />
               </div>

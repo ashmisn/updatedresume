@@ -19,20 +19,20 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-6 py-20 cherry-blossom-bg"
+      className="relative min-h-screen flex items-center justify-center px-6 py-12 sm:py-16 md:py-20 cherry-blossom-bg"
     >
       <Flower2 className="absolute top-10 left-10 text-pink-300 opacity-20" size={80} />
       <Flower2 className="absolute bottom-20 right-10 text-purple-300 opacity-20" size={100} />
 
-      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
 
         {/* IMAGE — BIG + ZOOM */}
         <motion.div
           whileHover={{ scale: 1.15 }}
           transition={{ type: 'spring', stiffness: 120, damping: 12 }}
-          className="mx-auto"
+          className="mx-auto md:mx-0"
         >
-          <div className="w-[380px] h-[380px] md:w-[420px] md:h-[420px] 
+          <div className="w-48 h-48 sm:w-[320px] sm:h-[320px] md:w-[420px] md:h-[420px] 
                           rounded-3xl overflow-hidden 
                           shadow-[0_30px_80px_rgba(0,0,0,0.25)]
                           border-8 border-white">
@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="text-center md:text-left">
 
           <motion.h1
-            className="text-6xl md:text-7xl font-handwritten text-foreground mb-6"
+            className="text-4xl sm:text-6xl md:text-7xl font-handwritten text-foreground mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
@@ -64,20 +64,20 @@ export default function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.4 }}
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
-                className="text-3xl md:text-4xl font-light text-muted-foreground"
+                className="text-2xl md:text-4xl font-light text-muted-foreground"
               >
                 {roles[index]}
               </motion.div>
             </AnimatePresence>
           </div>
 
-          <div className="space-y-3 text-xl text-muted-foreground mb-10 font-handwritten">
+          <div className="space-y-3 text-lg sm:text-xl text-muted-foreground mb-10 font-handwritten">
             <p>I build beautiful interfaces 🌼</p>
             <p>I engineer scalable backends 🌿</p>
             <p>I train intelligent AI systems 🤖</p>
           </div>
 
-          <div className="flex flex-wrap gap-4 items-center text-muted-foreground mb-8">
+          <div className="flex flex-wrap gap-4 items-center text-muted-foreground mb-8 justify-center md:justify-start">
             <div className="flex items-center gap-2">
               <MapPin size={18} /> Trivandrum
             </div>
@@ -95,18 +95,18 @@ export default function Hero() {
             </div> */}
           </div>
 
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-4">
             <a
               href="https://github.com/ashmisn"
               target="_blank"
-              className="px-6 py-3 bg-background rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2 border"
+              className="px-4 py-2 sm:px-6 sm:py-3 bg-background rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2 border"
             >
               <Github size={20} /> GitHub
             </a>
             <a
               href="https://www.linkedin.com/in/ashmi-s-n-67581a315/"
               target="_blank"
-              className="px-6 py-3 bg-background rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2 border"
+              className="px-4 py-2 sm:px-6 sm:py-3 bg-background rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center gap-2 border"
             >
               <Linkedin size={20} /> LinkedIn
             </a>

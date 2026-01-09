@@ -41,6 +41,7 @@ export const metadata: Metadata = {
   title: 'Ashmi S N - Full-Stack Developer & AI Engineer',
   description:
     'Portfolio of Ashmi S N - Building beautiful interfaces, engineering scalable backends, and training intelligent AI systems.',
+  viewport: 'width=device-width, initial-scale=1',
   openGraph: {
     images: [
       {
@@ -66,7 +67,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${indieFlower.variable} ${poppins.variable} font-poppins`}>
         <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
-          {children}
+          <main className="min-h-screen px-6 sm:px-8 lg:px-12">
+            <div className="max-w-6xl mx-auto">
+              {children}
+            </div>
+          </main>
         </ThemeProvider>
       </body>
     </html>

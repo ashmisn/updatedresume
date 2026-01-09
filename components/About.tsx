@@ -10,7 +10,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="about" ref={ref} className="relative py-24 px-4">
+    <section id="about" ref={ref} className="relative py-16 sm:py-20 md:py-24 px-4">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent"></div>
 
       <div className="max-w-4xl mx-auto">
@@ -27,7 +27,7 @@ export default function About() {
             <Flower2 className="text-purple-400" size={32} />
           </div>
 
-          <div className="bg-card/70 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 border-2 border-pink-100">
+          <div className="bg-card/70 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-8 lg:p-12 border-2 border-pink-100">
             <div className="flex items-start gap-4 mb-6">
               <GraduationCap className="text-pink-500 flex-shrink-0 mt-1" size={28} />
               <div>

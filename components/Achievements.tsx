@@ -51,7 +51,7 @@ export default function Achievements() {
   ];
 
   return (
-    <section id="achievements" ref={ref} className="relative py-24 px-4">
+    <section id="achievements" ref={ref} className="relative py-16 sm:py-20 md:py-24 px-4">
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pink-300 to-transparent"></div>
 
       <div className="max-w-6xl mx-auto">
@@ -68,14 +68,14 @@ export default function Achievements() {
             <Flower2 className="text-purple-400" size={32} />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-6 border-2 border-pink-100 hover:shadow-2xl transition-shadow"
+                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-4 md:p-6 border-2 border-pink-100 hover:shadow-2xl transition-shadow"
               >
                 <div className="bg-gradient-to-br from-yellow-400 to-orange-400 p-4 rounded-2xl shadow-lg inline-flex mb-4">
                   <achievement.icon className="text-white" size={28} />
@@ -97,7 +97,7 @@ export default function Achievements() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-8 border-2 border-purple-100"
+                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl p-6 md:p-8 border-2 border-purple-100"
               >
                 <div className="flex items-start gap-6">
                   <div className="bg-gradient-to-br from-purple-400 to-pink-400 p-4 rounded-2xl shadow-lg flex-shrink-0">
